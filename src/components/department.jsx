@@ -8,6 +8,7 @@ function Department(){
                 <span>Clinic Departments</span>
                 <span>To make easier to serve an appointment and no need to go out to fall in line .</span>
             </div>
+            
             <div className="">
                 <div className="">
                     Neorology
@@ -24,10 +25,14 @@ function Department(){
                 <div className="">
                     Cardiology
                 </div>
+                
             </div>
+            
             <div className="">
             </div>
+            
         </div>
+       
     )
 }
 
