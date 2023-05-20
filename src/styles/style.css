@@ -7,14 +7,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Styles applied for devices with a maximum width of 768 pixels or less */
   /* For example, smartphones and small tablets */
   body {
     background-color: lightblue;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Styles applied for devices with a minimum width of 769 pixels and a maximum width of 1024 pixels */
   /* For example, tablets and smaller laptops */
   body {
     background-color: lightgreen;
@@ -22,8 +20,6 @@ body {
 }
 @media (min-width: 1280px) and (max-width: 1440px) {
   /* Styles applied for laptops with a screen width between 1280px and 1440px */
-  /* You can adjust the values based on the specific range you want to target */
-  /* Example styles */
   body {
     background-color: red;
   }
@@ -180,5 +176,75 @@ body {
   .department div:first-child span:nth-child(2) {
     font-weight: 800;
     font-size: 40px;
+  }
+  .department .departments {
+    display: flex;
+    flex-direction: row;
+  }
+  .department .departments div {
+    background-color: whitesmoke;
+    padding: 40px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    width: 200px;
+  }
+  .department .departments div:hover {
+    background-color: #19A7CE;
+    color: white;
+  }
+  .department .depts {
+    background-color: whitesmoke;
+  }
+  .department .DepartmentRender {
+    padding: 70px;
+  }
+  .department .DepartmentRender .Neurology {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 10px;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 50%;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .title {
+    font-weight: 700;
+    font-size: 50px;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer1 {
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer1 div span {
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    text-align: left;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer1 div span b {
+    color: #19A7CE;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer2 {
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer2 div span {
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    text-align: left;
+  }
+  .department .DepartmentRender .Neurology .DepartmentTexts .featureContainer .featureContainer2 div span b {
+    color: #19A7CE;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -12,7 +12,6 @@ body{
 
     
 @media (max-width: 768px) {
-    /* Styles applied for devices with a maximum width of 768 pixels or less */
     /* For example, smartphones and small tablets */
     body {
       background-color: lightblue;
@@ -20,7 +19,6 @@ body{
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
-    /* Styles applied for devices with a minimum width of 769 pixels and a maximum width of 1024 pixels */
     /* For example, tablets and smaller laptops */
     body {
       background-color: lightgreen;
@@ -28,9 +26,7 @@ body{
   }
   @media (min-width: 1280px) and (max-width: 1440px) {
     /* Styles applied for laptops with a screen width between 1280px and 1440px */
-    /* You can adjust the values based on the specific range you want to target */
   
-    /* Example styles */
     body {
   background-color: red;
     }
@@ -200,10 +196,92 @@ body{
                     }
                 }
             }
-    }
+        }
     
-    
-    
+        .departments{
+            display: flex;
+            flex-direction: row;
+
+            div{
+                background-color: whitesmoke;
+                padding: 40px;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+                width: 200px;
+            &:hover{
+                background-color: #19A7CE;
+                color: white;
+            }
+            }
+           
+        }
+       .depts{
+        background-color: whitesmoke;
+       }
       
+    .DepartmentRender{
+        padding: 70px;
+       
+        .Neurology{
+           display: flex;
+           flex-direction: row;
+           gap: 50px;
+           padding: 10px;
+        .DepartmentTexts{
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            width: 50%;
+            .title{
+                font-weight: 700;
+                font-size: 50px;
+            }
+
+            .featureContainer{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .featureContainer1{
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 50px;
+                    div{
+                        span{
+                            font-size: 18px;
+                            font-family: $font2;
+                            text-align: left;
+                            b{
+                                color: #19A7CE;
+                            }
+                        }
+                    }
+                }
+                .featureContainer2{
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 50px;
+                    div{
+                        span{
+                            font-size: 18px;
+                            font-family: $font2;
+                            text-align: left;
+                            b{
+                                color: #19A7CE;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .DepartmentImage{
+        }
+         }
+        }
     }
-  }
+    
+    }
+  
+    
