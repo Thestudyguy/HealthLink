@@ -58,7 +58,7 @@ function Neorology() {
         </div>
       </div>
       <div className="DepartmentImage">
-          <img src={neurologist} alt=""/>
+          <img src={neurologist} alt="" style={{height: '409px'}}/>
       </div>
     </div>
   )

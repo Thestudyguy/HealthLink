@@ -1,6 +1,5 @@
 import React from "react";
-import neurologist from "../images/Neurologist.jpg";
-
+import ophthalmologist from "../images/ophthalmologist.jpg";
 function Ophthalmology(){
     return(<div className="Neurology">
     <div className="DepartmentTexts">
@@ -46,7 +45,7 @@ function Ophthalmology(){
       </div>
     </div>
     <div className="DepartmentImage">
-        <img src={neurologist} alt=""/>
+        <img src={ophthalmologist} alt=""/>
     </div>
   </div>)
 }

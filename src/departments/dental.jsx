@@ -1,6 +1,5 @@
 import React from "react";
-import neurologist from "../images/Neurologist.jpg";
-
+import dentist from "../images/dentist.png";
 function Dental(){
     return(
         <div className="Neurology">
@@ -58,7 +57,7 @@ function Dental(){
         </div>
       </div>
       <div className="DepartmentImage">
-          <img src={neurologist} alt=""/>
+          <img src={dentist} alt=""/>
       </div>
     </div>
     )

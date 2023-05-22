@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Neorology from "../departments/neorology";
 import Cardiology from "../departments/cardiology";
 import Dental from "../departments/dental";
@@ -7,17 +7,30 @@ import Surgical from "../departments/surgical";
 function Department(){
     const [selectedDepartment, setSelectedDepartment] = useState('neurology');
     const [fade, setFade] = useState(false);
+  const departmentsLists = ['neurology', 'surgical', 'dental', 'ophthalmology', 'cardiology'];
 
     const handleDepartmentClick = (department) => {
-      setFade(true);
-      setTimeout(() => {
         setSelectedDepartment(department);
-        setFade(false);
-      }, 700);
     };
     const departmentStyle = (department) => {
-        return selectedDepartment === department ? { backgroundColor: "#19A7CE"} : {};
+        return selectedDepartment === department ? { backgroundColor: "#19A7CE", color: 'white'} : {};
       };
+      useEffect(() => {
+        const interval = setInterval(() => {
+          const currentIndex = departmentsLists.indexOf(selectedDepartment);
+          const nextIndex = (currentIndex + 1) % departmentsLists.length;
+          setSelectedDepartment(departmentsLists[nextIndex]);
+      setFade(true);
+      setTimeout(() => {
+        setFade(false);
+      }, 200);
+        }, 5000);
+    
+        return () => {
+          clearInterval(interval);
+        };
+      }, [selectedDepartment, departmentsLists]);
+    
     return(
         <div className="department">
             <div className="">
@@ -61,7 +74,7 @@ function Department(){
             
             <div className="DepartmentRender">
             {selectedDepartment === "neurology" && (
-          <div style={{ opacity: fade ? 0 : 1, transition: "opacity 0.7s" }}>
+          <div style={{ opacity: fade ? 0 : 1, transition: "opacity 0.7s" } }>
             <Neorology />
           </div>
         )}
