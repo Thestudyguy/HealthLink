@@ -52,14 +52,35 @@ function Navbar(){
     minute: 'numeric',
     hour12: true,
   });
-    /*
-     const formattedTime = new Date(data.time).toLocaleTimeString([], {
-      hour: 'numeric',
-      minute: '2-digit',
-    });
-    */
     e.preventDefault();
-    push(dbref, { ...data, date: formattedDate, time: formattedTime })
+    for( let key in data){
+      if(data[key].trim() === ""){
+        alert("missing fields");
+        break;
+      }
+      else{
+        push(dbref, { ...data, date: formattedDate, time: formattedTime })
+        .then(()=>{
+          alert('push succesful')
+          closeModal();
+          setData({
+            fullname: "",
+            email: "",
+            department: "",
+            date: "",
+            time: "",
+          })
+        }).catch((error)=>{
+          console.error(error);
+        })
+      }
+    }
+    /* works fine but very long code
+     if(data.fullname.trim() === "" || data.email.trim() || data.department.trim() || data.time.trim() || data.date.trim()){
+      alert("Missing Fields");
+    }
+    else{
+       push(dbref, { ...data, date: formattedDate, time: formattedTime })
     .then(()=>{
       alert('push succesful')
       closeModal();
@@ -74,6 +95,10 @@ function Navbar(){
       console.error(error);
     })
   }
+    */
+   
+    }
+   
   const handledept = (e) => {
     setData({ ...data, department: e.target.value });
   };
