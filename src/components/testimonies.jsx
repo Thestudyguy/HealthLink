@@ -45,7 +45,7 @@ function Testimonies(){
                 </span>
             </div>
             <div className="slideContainer">
-                <Carousel  selectedItem={activeSlide}
+                <Carousel showThumbs={false} selectedItem={activeSlide}
                            onChange={(index) => setActiveSlide(index)}>
                 <div className="sliderContent">
                     <div className="image">

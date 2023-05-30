@@ -52,14 +52,21 @@ function Navbar(){
     minute: 'numeric',
     hour12: true,
   });
+  //added flag variable
+  let isEmptyField = false;
     e.preventDefault();
     for( let key in data){
       if(data[key].trim() === ""){
         alert("missing fields");
+        isEmptyField =true;
         break;
       }
-      else{
-        push(dbref, { ...data, date: formattedDate, time: formattedTime })
+        
+    }
+    //flag variable in action
+    try {
+      if(!isEmptyField){
+         push(dbref, { ...data, date: formattedDate, time: formattedTime })
         .then(()=>{
           alert('push succesful')
           closeModal();
@@ -74,7 +81,36 @@ function Navbar(){
           console.error(error);
         })
       }
+    } catch (error) {
+      console.error(error);
     }
+   /* loop does not break, therefore executing else block in every data[key]
+   for( let key in data){
+      if(data[key].trim() === ""){
+        alert("missing fields");
+        break;
+      } else{
+        if(!isEmptyField){
+         push(dbref, { ...data, date: formattedDate, time: formattedTime })
+        .then(()=>{
+          alert('push succesful')
+          closeModal();
+          setData({
+            fullname: "",
+            email: "",
+            department: "",
+            date: "",
+            time: "",
+          })
+        }).catch((error)=>{
+          console.error(error);
+        })
+      }
+      }
+        
+    }
+      
+   */
     /* works fine but very long code
      if(data.fullname.trim() === "" || data.email.trim() || data.department.trim() || data.time.trim() || data.date.trim()){
       alert("Missing Fields");
