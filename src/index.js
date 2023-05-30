@@ -7,6 +7,9 @@ import Showcase from './components/showcase';
 import Department from './components/department';
 import Testimonies from './components/testimonies';
 import Email from './components/email';
+import Banner2 from './components/Staffs';
+import About from './components/about';
+import Footer from './components/footer';
 import "./styles/style.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,5 +21,8 @@ root.render(
     <Department />
     <Testimonies />
     <Email />
+    <Banner2 />
+    <About />
+    <Footer />
   </React.StrictMode>
 );

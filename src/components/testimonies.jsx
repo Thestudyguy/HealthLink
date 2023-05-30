@@ -6,6 +6,8 @@ import user1 from "../images/user1.jpg";
 import user2 from "../images/user2.jpg";
 import user3 from "../images/user3.jpg";
 import user5 from "../images/user5.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Testimonies(){
     const imgstyle = {
         width: '200%',
@@ -17,14 +19,20 @@ function Testimonies(){
     useEffect(() => {
       const interval = setInterval(() => {
         setActiveSlide((prevSlide) => (prevSlide + 1) % slideCount);
-      }, 5000);
+      }, 8000);
   
       return () => {
         clearInterval(interval);
       };
     }, [slideCount]);
+    useEffect(() => {
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out',
+        });
+      }, []);
     return(
-        <div className="testimonies">
+        <div className="testimonies" data-aos="fade-right">
             <div className="testimony-text">
                 <span className="title">
                     Testimonies

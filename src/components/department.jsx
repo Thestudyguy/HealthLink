@@ -4,13 +4,20 @@ import Cardiology from "../departments/cardiology";
 import Dental from "../departments/dental";
 import Ophthalmology from "../departments/optalmologist";
 import Surgical from "../departments/surgical";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function Department(){
     const [selectedDepartment, setSelectedDepartment] = useState('neurology');
     const [fade, setFade] = useState(false);
   const departmentsLists = ['neurology', 'surgical', 'dental', 'ophthalmology', 'cardiology'];
 
     const handleDepartmentClick = (department) => {
+        setFade(true);
+        setTimeout(() => {
         setSelectedDepartment(department);
+          setFade(false);
+        }, 700);
     };
     const departmentStyle = (department) => {
         return selectedDepartment === department ? { backgroundColor: "#19A7CE", color: 'white'} : {};
@@ -30,15 +37,20 @@ function Department(){
           clearInterval(interval);
         };
       }, [selectedDepartment, departmentsLists]);
-    
+      useEffect(() => {
+        AOS.init({
+          duration: 900,
+          easing: 'ease-in-out',
+        });
+      }, []);
     return(
-        <div className="department">
+        <div className="department" data-aos="fade-up">
             <div className="">
                 <span>DEPARTMENTS</span>
                 <span>Clinic Departments</span>
                 <span>To make easier to serve an appointment and no need to go out to fall in line .</span>
             </div>
-            <div className="departments">
+            <div className="departments" data-aos="fade-right" data-aos-duration="1100">
                 <div className={selectedDepartment === "neurology" ? "active" : ""}
                  onClick={() => handleDepartmentClick('neurology')}
                  style={departmentStyle('neurology')}

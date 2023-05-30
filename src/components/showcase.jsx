@@ -5,8 +5,8 @@ import hour from "../images/chat.png";
 import stethoscope from "../images/stethoscope.png";
 function Showcase(){
     return(
-        <div className="showCase">
-           <div className="">
+        <div className="showCase" >
+           <div className="" data-aos='fade-down'>
             <img src={doctor} alt="" />
             <span>Qualified Doctors</span>
             <span>
@@ -14,7 +14,7 @@ function Showcase(){
                  and possess the necessary qualifications to provide top-quality medical care.
             </span>
            </div>
-           <div className="">
+           <div className=""data-aos='fade-up'>
            <img src={ambulance} alt="" />
            <span>Emergency Care</span>
            <span>
@@ -22,7 +22,7 @@ function Showcase(){
                 and prompt treatment for critical conditions and unforeseen medical emergencies.
            </span>
            </div>
-           <div className="">
+           <div className=""data-aos='fade-down'>
            <img src={stethoscope} alt="" />
            <span>General Check Up</span>
            <span>
@@ -30,7 +30,7 @@ function Showcase(){
                 detect any potential issues early on, and receive appropriate medical guidance.
            </span>
            </div>
-           <div className="">
+           <div className=""data-aos='fade-up'>
            <img src={hour} alt="" />
            <span>24 Hours</span>
            <span>
