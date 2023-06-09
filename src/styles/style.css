@@ -729,13 +729,6 @@ body {
   background: transparent;
   border-bottom: 2px solid whitesmoke;
 }
-.appointment form input:focus, .appointment form select:focus, .appointment form button:focus, .appointment form .date:focus {
-  border: none;
-  outline: none;
-  color: whitesmoke;
-  background: transparent;
-  border-bottom: 2px solid whitesmoke;
-}
 .appointment form div {
   display: flex;
   flex-direction: column;

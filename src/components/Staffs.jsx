@@ -1,14 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import doctor1 from "../images/doctor1-removebg-preview.png";
 import doctor2 from "../images/doctor2-removebg-preview.png";
 import doctor3 from "../images/doctor3-removebg-preview.png";
 import doctor4 from "../images/doctor4-removebg-preview.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Staffs(){
     const imageStyle ={
         width: '100%',
     }
+    useEffect(() => {
+        AOS.init({
+          easing: 'ease-in-out',
+        });
+      }, []);
     return(
-        <div className="doctors" data-aos="fade-right">
+        <div className="doctors"  data-aos="fade-up" data-aos-duration="2500">
            <div className="intro">
                 <span>meet our Qualified Doctors</span>
            </div>

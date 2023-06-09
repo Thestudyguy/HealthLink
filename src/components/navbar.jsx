@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {ref, push} from 'firebase/database';
 import { db } from "../firebaseConfig";
 function Navbar(){
-  const dbref = ref(db, "Appointments");
+  const dbref = ref(db, "Pending Appointments");
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -63,7 +63,7 @@ function Navbar(){
       }
         
     }
-    //flag variable in action
+    //flag variable go brrrrr
     try {
       if(!isEmptyField){
          push(dbref, { ...data, date: formattedDate, time: formattedTime })
@@ -134,7 +134,6 @@ function Navbar(){
     */
    
     }
-   
   const handledept = (e) => {
     setData({ ...data, department: e.target.value });
   };
@@ -186,7 +185,7 @@ function Navbar(){
                onChange={handledept}
                required>
               <option value='' disabled selected required>
-                  Select Department
+                  Select Department(Optional)
                 </option>
                 <option value='Dental'>
                   Dental
